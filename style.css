@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* --- Estilos Generales y Escenas --- */
+body {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* ==========================================================================
+   ESCENA 1: ESTILOS DE LA INTRODUCCIÓN
+   ========================================================================== */
+#intro-sequence {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.8s ease-in-out;
+}
+
+#intro-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Ocultar los controles de video por defecto */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+#video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  transition: opacity 1s ease;
+}
+
+#disclaimer-envelope {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  max-width: 500px;
+  background-color: #f5ebe0;
+  color: #5d4037;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 3;
+  opacity: 0;
+  transform: translate(-50%, -150%);
+  cursor: pointer;
+  transition: opacity 1s ease,
+    transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    min-height 0.5s ease-in-out;
+  min-height: 150px;
+}
+
+#disclaimer-envelope.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.disclaimer-part {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#envelope-front {
+  padding: 40px 40px;
+}
+
+#letter-content {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 85px 55px;
+}
+
+#disclaimer-envelope.is-open {
+  cursor: default;
+  min-height: 400px;
+}
+
+#disclaimer-envelope.is-open #envelope-front {
+  opacity: 0;
+  transform: rotateX(90deg);
+}
+
+#disclaimer-envelope.is-open #letter-content {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.disclaimer-part h2 {
+  margin-top: 0;
+}
+#accept-btn {
+  background-color: #5d4037;
+  color: #f5ebe0;
+  border: none;
+  padding: 12px 25px;
+  font-family: "Playfair Display", serif;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+#accept-btn:hover {
+  background-color: #a1887f;
+}
+
+/* ==========================================================================
+   ESCENA 2: ESTILOS DEL LIBRO
+   ========================================================================== */
+#book-scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fadadd, #fce4ec);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.book {
+  width: 400px;
+  height: 600px;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+  perspective: 2000px;
+}
+
+.book::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 5%;
+  width: 90%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.25);
+  filter: blur(25px);
+  transform: rotateX(80deg) scaleY(1.5);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.book.closed-front::before {
+  opacity: 0.6;
+}
+.book.closed-front:hover {
+  transform: rotateY(-25deg) scale(1.03);
+}
+.book.closed-front:hover::before {
+  transform: rotateX(70deg) translateY(20px) scale(1.05);
+  opacity: 0.7;
+}
+.book.open-reading {
+  transform: translateX(50%);
+}
+.book.closed-back {
+  transform: translateX(100%);
+}
+
+.paper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.paper.flipped {
+  transform: rotateY(-180deg);
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #fdfaf7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.front-content,
+.back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #5d4037;
+}
+
+.page-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-number {
+  font-size: 0.9em;
+  color: #a1887f;
+}
+.front-content h2,
+.back-content h2 {
+  margin-top: 0;
+  color: #a1887f;
+}
+.back {
+  transform: rotateY(180deg);
+}
+#front-cover,
+#back-cover {
+  background-color: #f5ebe0;
+}
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   ADAPTABILIDAD (RESPONSIVE DESIGN)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .book {
+    width: 360px;
+    height: 540px;
+  }
+  .front-content,
+  .back-content {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  #disclaimer-envelope.is-open {
+    min-height: 350px;
+  }
+  #envelope-front {
+    padding: 25px;
+  }
+  #letter-content {
+    padding: 65px 35px;
+  }
+  .disclaimer-part h2 {
+    font-size: 1.2em;
+  }
+  .disclaimer-part p {
+    font-size: 0.9em;
+  }
+  #accept-btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+  .book {
+    width: 48vw;
+    height: calc(48vw * 1.5);
+  }
+  .front-content,
+  .back-content {
+    padding: 25px 20px;
+  }
+  .page-text h2 {
+    font-size: 1.2em;
+  }
+  .page-text p {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+}

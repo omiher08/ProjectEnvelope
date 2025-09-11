@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Historia para Ti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =================================================
+         ESCENA 1: SECUENCIA DE INTRODUCCIÓN
+         ================================================= -->
+    <div id="intro-sequence">
+        <!-- Video de fondo -->
+        <video id="intro-video" src="saturn-video.mp4" muted playsinline preload="auto"></video>
+        
+        <!-- Capa de oscurecimiento -->
+        <div id="video-overlay"></div>
+
+        <!-- Disclaimer (Sobre/Carta) -->
+        <div id="disclaimer-envelope">
+            <div id="envelope-front" class="disclaimer-part">
+                <h2>Has recibido algo importante</h2>
+                <p>(Haz clic para abrir)</p>
+            </div>
+            <div id="letter-content" class="disclaimer-part">
+                <h2>Un Mensaje Importante</h2>
+                <p>El contenido a continuación es personal, directo y muy sincero. Continuar implica que estás dispuesta a leer algo que podría cambiar las cosas entre nosotros. Procede solo si tu corazón está abierto a ello.</p>
+                <button id="accept-btn">Estoy lista</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================
+         ESCENA 2: EL LIBRO INTERACTIVO
+         ================================================= -->
+    <main id="book-scene" class="hidden">
+        <div id="book" class="book">
+            <!-- Portada -->
+            <div id="p1" class="paper">
+                <div class="front">
+                    <div id="front-cover" class="front-content">
+                        <img src="https://placehold.co/400x600/DBB5B5/FFFFFF?text=Pon+aquí\nla imagen\ndel tulipán" alt="Portada con Tulipán" class="cover-image">
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="back-content">
+                        <div class="page-text">
+                            <h2>Hola...</h2>
+                            <p>He querido decirte algo desde hace un tiempo, y no encontraba la manera correcta de hacerlo...</p>
+                        </div>
+                        <div class="page-number">1</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Página 2 -->
+            <div id="p2" class="paper">
+                <div class="front">
+                    <div class="front-content">
+                        <div class="page-text">
+                            <p>Y es que cada vez que hablamos, siento que el mundo se detiene un poco.</p>
+                        </div>
+                        <div class="page-number">2</div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="back-content">
+                        <div class="page-text">
+                            <p>Me he dado cuenta de que me gustas. Mucho.</p>
+                        </div>
+                        <div class="page-number">3</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contraportada -->
+            <div id="p3" class="paper">
+                <div class="front">
+                    <div class="front-content">
+                        <div class="page-text">
+                            <p>Y solo quería que lo supieras.</p>
+                        </div>
+                        <div class="page-number">4</div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div id="back-cover" class="back-content">
+                        <!-- Contraportada en blanco -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Contenedor de audios -->
+    <div id="audio-container" style="display: none;">
+        <audio id="audioPag1" src="cancion1.mp3" loop></audio>
+        <audio id="audioPag3" src="cancion2.mp3" loop></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
