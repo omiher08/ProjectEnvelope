@@ -52,8 +52,12 @@ acceptBtn.addEventListener("click", (e) => {
 
 // Detecta cuando el video termina para pasar a la siguiente escena
 introVideo.addEventListener("ended", () => {
-    introSequence.classList.add("hidden");
-    bookScene.classList.remove("hidden");
+    introSequence.style.opacity = '0';
+    
+    setTimeout(() => {
+        introSequence.classList.add("hidden");
+        bookScene.classList.remove("hidden");
+    }, 1000);
 });
 
 // --- LÓGICA DEL LIBRO ---
