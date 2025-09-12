@@ -196,7 +196,7 @@ video::-webkit-media-controls {
   opacity: 0.6;
 }
 .book.closed-front:hover {
-  transform: translateY(0) rotateY(-25deg) rotateX(-10deg) scale(1.10);
+  transform: rotateY(-25deg) rotateX(-10deg) scale(1.10);
   transition: transform 0.8s ease;
 }
 .book.closed-front:hover::before {
@@ -204,11 +204,11 @@ video::-webkit-media-controls {
   opacity: 0.7;
 }
 .book.open-reading {
-  transform: translateY(0) translateX(50%);
+  transform: translateX(50%);
   transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 .book.closed-back {
-  transform: translateY(0) translateX(100%);
+  transform: translateX(100%);
   transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
