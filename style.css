@@ -197,7 +197,6 @@ video::-webkit-media-controls {
 }
 .book.closed-front:hover {
   transform: rotateY(-25deg) rotateX(-10deg) scale(1.10);
-  transition: transform 0.8s ease;
 }
 .book.closed-front:hover::before {
   transform: rotateX(70deg) translateY(20px) scale(1.12);
@@ -205,11 +204,9 @@ video::-webkit-media-controls {
 }
 .book.open-reading {
   transform: translateX(50%);
-  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 .book.closed-back {
   transform: translateX(100%);
-  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
 .paper {
