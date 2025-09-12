@@ -212,10 +212,12 @@ video::-webkit-media-controls {
 
 #book-scene:not(.hidden) .book.open-reading {
     transform: translateY(0) translateX(50%);
+    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
 #book-scene:not(.hidden) .book.closed-back {
-    transform: translateY(0) translateX(50%);
+    transform: translateY(0) translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
 .paper {
