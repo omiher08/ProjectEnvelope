@@ -215,7 +215,7 @@ video::-webkit-media-controls {
 }
 
 #book-scene:not(.hidden) .book.closed-back {
-    transform: translateY(0) translateX(100%);
+    transform: translateY(0) translateX(50%);
 }
 
 .paper {
