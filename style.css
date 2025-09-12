@@ -197,6 +197,7 @@ video::-webkit-media-controls {
 }
 .book.closed-front:hover {
   transform: translateY(0) rotateY(-25deg) rotateX(-10deg) scale(1.10);
+  transition: transform 0.8s ease;
 }
 .book.closed-front:hover::before {
   transform: rotateX(70deg) translateY(20px) scale(1.12);
