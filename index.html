@@ -37,15 +37,15 @@
          ================================================= -->
     <main id="book-scene" class="hidden">
         <div id="book" class="book">
-            <!-- Portada -->
+            <!-- Página 1 (Portada y su reverso) -->
             <div id="p1" class="paper">
                 <div class="front">
                     <div id="front-cover" class="front-content">
-                        <img src="https://placehold.co/400x600/DBB5B5/FFFFFF?text=Pon+aquí\nla imagen\ndel tulipán" alt="Portada con Tulipán" class="cover-image">
+                        <img src="https://placehold.co/400x600/DBB5B5/FFFFFF?text=Pon+aquí%0Ala+imagen%0Adel+tulipán" alt="Portada con Tulipán" class="cover-image">
                     </div>
                 </div>
                 <div class="back">
-                    <div class="back-content">
+                    <div id="b1" class="back-content">
                         <div class="page-text">
                             <h2>Hola...</h2>
                             <p>He querido decirte algo desde hace un tiempo, y no encontraba la manera correcta de hacerlo...</p>
@@ -54,12 +54,12 @@
                     </div>
                 </div>
             </div>
-            <!-- Página 2 -->
+            
             <div id="p2" class="paper">
                 <div class="front">
                     <div class="front-content">
                         <div class="page-text">
-                            <p>Y es que cada vez que hablamos, siento que el mundo se detiene un poco.</p>
+                            <p>Así que decidí usar algo que nos conecta... la creación de pequeñas realidades, como esta.</p>
                         </div>
                         <div class="page-number">2</div>
                     </div>
@@ -67,37 +67,67 @@
                 <div class="back">
                     <div class="back-content">
                         <div class="page-text">
-                            <p>Me he dado cuenta de que me gustas. Mucho.</p>
+                            <p>Lo que quiero decirte es... simple y complicado a la vez.</p>
                         </div>
                         <div class="page-number">3</div>
                     </div>
                 </div>
             </div>
-            <!-- Contraportada -->
+            
             <div id="p3" class="paper">
                 <div class="front">
                     <div class="front-content">
-                        <div class="page-text">
-                            <p>Y solo quería que lo supieras.</p>
+                         <div class="page-text">
+                            <p>Me gustas. Mucho más de lo que probablemente imaginas.</p>
                         </div>
                         <div class="page-number">4</div>
                     </div>
                 </div>
                 <div class="back">
+                    <div class="back-content">
+                        <div class="page-text">
+                            <p>Aquí puedes continuar tu mensaje...</p>
+                        </div>
+                        <div class="page-number">5</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="p4" class="paper">
+                <div class="front">
+                    <div class="front-content">
+                         <div class="page-text">
+                            <p>Cada "paper" contiene dos páginas.</p>
+                        </div>
+                        <div class="page-number">6</div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="back-content">
+                        <div class="page-text">
+                            <p>Sigue escribiendo tu historia aquí.</p>
+                        </div>
+                        <div class="page-number">7</div>
+                    </div>
+                </div>
+            </div>
+            <div id="p5" class="paper">
+                <div class="front">
+                    <div class="front-content">
+                         <div class="page-text">
+                            <p>El final de tu mensaje.</p>
+                        </div>
+                        <div class="page-number">8</div>
+                    </div>
+                </div>
+                <div class="back">
                     <div id="back-cover" class="back-content">
-                        <!-- Contraportada en blanco -->
+                        <!-- La contraportada está vacía -->
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    
-    <!-- Contenedor de audios -->
-    <div id="audio-container" style="display: none;">
-        <audio id="audioPag1" src="cancion1.mp3" loop></audio>
-        <audio id="audioPag3" src="cancion2.mp3" loop></audio>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
