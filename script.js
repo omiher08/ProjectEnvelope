@@ -8,17 +8,11 @@ const bookScene = document.querySelector("#book-scene");
 
 const book = document.querySelector("#book");
 const papers = document.querySelectorAll(".paper");
-const audios = {
-    pag1: document.querySelector("#audioPag1"),
-    pag3: document.querySelector("#audioPag3")
-};
 
 // --- Estado Global ---
 let currentLocation = 1;
 let numOfPapers = papers.length;
 let maxLocation = numOfPapers + 1;
-let isAudioUnlocked = false;
-let currentAudio = null;
 let isEnvelopeOpen = false;
 
 // --- LÓGICA DE LA SECUENCIA DE INTRODUCCIÓN ---
@@ -67,8 +61,6 @@ book.addEventListener("click", handleBookClick);
 function handleBookClick(e) {
     // El libro solo funciona si su escena es visible
     if (bookScene.classList.contains('hidden')) return;
-
-    if (!isAudioUnlocked) unlockAudio();
     
     if (currentLocation === 1) {
         goNextPage();
@@ -108,27 +100,6 @@ function updateBookState() {
     if (currentLocation === 1) book.classList.add("closed-front");
     else if (currentLocation > numOfPapers) book.classList.add("closed-back");
     else book.classList.add("open-reading");
-    manageAudio();
-}
-
-function unlockAudio() {
-    Object.values(audios).forEach(audio => {
-        if (audio) audio.play().then(() => audio.pause()).catch(e => {});
-    });
-    isAudioUnlocked = true;
-}
-
-function manageAudio() {
-    if (!isAudioUnlocked) return;
-    let newAudio = null;
-    if (currentLocation >= 2 && currentLocation <= 3) newAudio = audios.pag1;
-    else if (currentLocation >= 4 && currentLocation <= 5) newAudio = audios.pag3;
-    
-    if (newAudio !== currentAudio) {
-        if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; }
-        if (newAudio) newAudio.play();
-        currentAudio = newAudio;
-    }
 }
 
 function initializeBook() {
