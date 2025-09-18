@@ -72,8 +72,9 @@ video::-webkit-media-controls {
   cursor: pointer;
   transition: opacity 1s ease,
     transform 1s ease-out,
-    min-height 0.5s ease-in-out;
-  min-height: 150px;
+    max-height 0.5s ease-in-out;
+  max-height: 150px;
+  overflow: hidden;
 }
 
 #disclaimer-envelope.visible {
@@ -93,6 +94,7 @@ video::-webkit-media-controls {
 }
 
 #envelope-front {
+  height: 150px;
   padding: 40px 40px;
 }
 
@@ -108,7 +110,7 @@ video::-webkit-media-controls {
 
 #disclaimer-envelope.is-open {
   cursor: default;
-  min-height: 400px;
+  max-height: 600px;
 }
 
 #disclaimer-envelope.is-open #envelope-front {
@@ -311,7 +313,7 @@ video::-webkit-media-controls {
 
 @media (max-width: 767px) {
   #disclaimer-envelope.is-open {
-    min-height: 370px;
+    max-height: 500px;
   }
   #envelope-front {
     padding: 25px;
