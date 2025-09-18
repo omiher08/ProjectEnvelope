@@ -98,8 +98,9 @@ video::-webkit-media-controls {
 #envelope-front {
   height: 150px;
   padding: 40px 40px;
-  /* CAMBIO: Se añade un z-index para asegurar que el sobre cerrado esté por encima de la carta oculta. */
   z-index: 2;
+  /* CAMBIO: Se añade esta propiedad para forzar un nuevo contexto de renderizado y solucionar el bug de superposición. */
+  transform: translateZ(0);
 }
 
 #letter-content {
@@ -107,7 +108,6 @@ video::-webkit-media-controls {
   transform: rotateX(-90deg);
   width: 100%;
   padding: 85px 55px;
-  /* CAMBIO: Se añade un z-index menor para que la carta esté detrás del sobre al inicio. */
   z-index: 1;
 }
 
