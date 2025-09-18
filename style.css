@@ -108,7 +108,7 @@ video::-webkit-media-controls {
 
 #disclaimer-envelope.is-open {
   cursor: default;
-  min-height: 470px;
+  min-height: 520px;
 }
 
 #disclaimer-envelope.is-open #envelope-front {
@@ -134,6 +134,7 @@ video::-webkit-media-controls {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  margin-bottom: 20px;
   transition: background-color 0.3s;
 }
 #accept-btn:hover {
