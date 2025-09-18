@@ -74,7 +74,6 @@ video::-webkit-media-controls {
     max-height 0.6s ease-in-out;
   max-height: 150px;
   overflow: hidden;
-  /* CAMBIO: Se cambia 'display: grid' por 'position: relative' para un control de capas más robusto. */
   position: relative;
 }
 
@@ -91,7 +90,6 @@ video::-webkit-media-controls {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  /* CAMBIO: Se reemplazan las propiedades de grid por posicionamiento absoluto para controlar el apilamiento. */
   position: absolute;
   top: 0;
   left: 0;
@@ -102,6 +100,8 @@ video::-webkit-media-controls {
 #envelope-front {
   padding: 40px 40px;
   z-index: 2;
+  /* CAMBIO: Se añade esta propiedad para forzar un nuevo contexto de renderizado y solucionar el bug de superposición. */
+  transform: translateZ(0);
 }
 
 #letter-content {
