@@ -39,7 +39,6 @@ body {
   z-index: 1;
 }
 
-/* Ocultar los controles de video por defecto */
 video::-webkit-media-controls {
   display: none !important;
 }
@@ -72,7 +71,7 @@ video::-webkit-media-controls {
   cursor: pointer;
   transition: opacity 1s ease,
     transform 1s ease-out,
-    max-height 0.5s ease-in-out;
+    max-height 0.6s ease-in-out;
   max-height: 150px;
   overflow: hidden;
   display: grid;
@@ -91,10 +90,10 @@ video::-webkit-media-controls {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   box-sizing: border-box;
   grid-row: 1 / 1;
   grid-column: 1 / 1;
+  /* CAMBIO: Se elimina 'height: 100%' para romper la dependencia circular y permitir que el contenido defina la altura. */
 }
 
 #envelope-front {
@@ -105,10 +104,9 @@ video::-webkit-media-controls {
 #letter-content {
   opacity: 0;
   transform: rotateX(-90deg);
-  top: 0;
-  left: 0;
   width: 100%;
   padding: 85px 55px;
+  /* CAMBIO: Se eliminan 'top' y 'left' que no son necesarios aquí. */
 }
 
 #disclaimer-envelope.is-open {
@@ -350,3 +348,4 @@ video::-webkit-media-controls {
     line-height: 1.6;
   }
 }
+
