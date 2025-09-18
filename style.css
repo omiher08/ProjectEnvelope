@@ -108,7 +108,7 @@ video::-webkit-media-controls {
 
 #disclaimer-envelope.is-open {
   cursor: default;
-  min-height: 470px;
+  min-height: 550px;
 }
 
 #disclaimer-envelope.is-open #envelope-front {
