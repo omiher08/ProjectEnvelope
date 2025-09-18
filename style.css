@@ -93,12 +93,13 @@ video::-webkit-media-controls {
   box-sizing: border-box;
   grid-row: 1 / 1;
   grid-column: 1 / 1;
-  /* CAMBIO: Se elimina 'height: 100%' para romper la dependencia circular y permitir que el contenido defina la altura. */
 }
 
 #envelope-front {
   height: 150px;
   padding: 40px 40px;
+  /* CAMBIO: Se añade un z-index para asegurar que el sobre cerrado esté por encima de la carta oculta. */
+  z-index: 2;
 }
 
 #letter-content {
@@ -106,7 +107,8 @@ video::-webkit-media-controls {
   transform: rotateX(-90deg);
   width: 100%;
   padding: 85px 55px;
-  /* CAMBIO: Se eliminan 'top' y 'left' que no son necesarios aquí. */
+  /* CAMBIO: Se añade un z-index menor para que la carta esté detrás del sobre al inicio. */
+  z-index: 1;
 }
 
 #disclaimer-envelope.is-open {
