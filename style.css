@@ -74,8 +74,8 @@ video::-webkit-media-controls {
     max-height 0.6s ease-in-out;
   max-height: 150px;
   overflow: hidden;
-  display: grid;
-  align-items: center;
+  /* CAMBIO: Se cambia 'display: grid' por 'position: relative' para un control de capas más robusto. */
+  position: relative;
 }
 
 #disclaimer-envelope.visible {
@@ -91,16 +91,17 @@ video::-webkit-media-controls {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
+  /* CAMBIO: Se reemplazan las propiedades de grid por posicionamiento absoluto para controlar el apilamiento. */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #envelope-front {
-  height: 150px;
   padding: 40px 40px;
   z-index: 2;
-  /* CAMBIO: Se añade esta propiedad para forzar un nuevo contexto de renderizado y solucionar el bug de superposición. */
-  transform: translateZ(0);
 }
 
 #letter-content {
