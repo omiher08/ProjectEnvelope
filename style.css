@@ -103,7 +103,7 @@ video::-webkit-media-controls {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 100px 55px 0px, 55px;
+  padding: 85px 55px;
 }
 
 #disclaimer-envelope.is-open {
@@ -128,7 +128,7 @@ video::-webkit-media-controls {
   background-color: #5d4037;
   color: #f5ebe0;
   border: none;
-  padding: 0px 25px 25px 25px;
+  padding: 12px 25px;
   font-family: "Playfair Display", serif;
   font-size: 1em;
   border-radius: 5px;
