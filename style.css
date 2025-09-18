@@ -83,7 +83,7 @@ video::-webkit-media-controls {
 }
 
 .disclaimer-part {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -100,8 +100,9 @@ video::-webkit-media-controls {
 #envelope-front {
   padding: 40px 40px;
   z-index: 2;
-  /* CAMBIO: Se añade esta propiedad para forzar un nuevo contexto de renderizado y solucionar el bug de superposición. */
   transform: translateZ(0);
+  /* CAMBIO: Se controla explícitamente la visibilidad */
+  visibility: visible;
 }
 
 #letter-content {
@@ -110,6 +111,8 @@ video::-webkit-media-controls {
   width: 100%;
   padding: 85px 55px;
   z-index: 1;
+  /* CAMBIO: La carta es completamente invisible e inexistente para el navegador por defecto. */
+  visibility: hidden;
 }
 
 #disclaimer-envelope.is-open {
@@ -120,11 +123,15 @@ video::-webkit-media-controls {
 #disclaimer-envelope.is-open #envelope-front {
   opacity: 0;
   transform: rotateX(90deg);
+  /* CAMBIO: Se oculta completamente el sobre al abrir la carta. */
+  visibility: hidden;
 }
 
 #disclaimer-envelope.is-open #letter-content {
   opacity: 1;
   transform: rotateX(0deg);
+  /* CAMBIO: La carta se hace visible solo cuando el sobre está abierto. */
+  visibility: visible;
 }
 
 .disclaimer-part h2 {
