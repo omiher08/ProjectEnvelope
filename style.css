@@ -176,9 +176,6 @@ video::-webkit-media-controls {
     opacity: 1;
 }
 
-/* --- SOMBRA ELIMINADA --- */
-/* Se eliminaron los bloques .book::before y sus hover states */
-
 #book-scene:not(.hidden) .book.closed-front,
 #book-scene:not(.hidden) .book.open-reading,
 #book-scene:not(.hidden) .book.closed-back {
@@ -191,6 +188,11 @@ video::-webkit-media-controls {
 
 #book-scene:not(.hidden) .book.closed-front:hover { 
     transform: translateY(0) rotateY(-25deg) rotateX(-10deg) scale(1.03);
+}
+
+#book-scene:not(.hidden) .book.closed-front:hover::before {
+    transform: rotateX(70deg) translateY(20px) scale(1.05);
+    opacity: 0.7;
 }
 
 #book-scene:not(.hidden) .book.open-reading {
@@ -222,7 +224,6 @@ video::-webkit-media-controls {
   height: 100%;
   position: absolute;
   background-color: #fdfaf7;
-  /* Mantenemos esta sombra suave interna de las hojas para que no se vean planas */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   backface-visibility: hidden;
   cursor: pointer;
