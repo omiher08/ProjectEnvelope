@@ -243,7 +243,7 @@ video::-webkit-media-controls {
   height: 100%;
   position: absolute;
   background-color: #fdfaf7;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   backface-visibility: hidden;
   cursor: pointer;
 }
