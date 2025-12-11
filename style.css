@@ -204,6 +204,10 @@ video::-webkit-media-controls {
   pointer-events: none;
   z-index: 10;
 }
+
+.book.closed-back::after {
+  display: none;
+}
  
 #book-scene:not(.hidden) .book.closed-front,
 #book-scene:not(.hidden) .book.open-reading,
