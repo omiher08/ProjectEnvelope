@@ -176,42 +176,8 @@ video::-webkit-media-controls {
     opacity: 1;
 }
 
-/* --- SOMBRA REALISTA CORREGIDA --- */
-.book::before {
-  content: "";
-  position: absolute;
-  bottom: 0; /* Alineada a la base */
-  left: 10%;
-  width: 80%;
-  height: 20px; /* Una base delgada para la sombra */
-  background: rgba(0, 0, 0, 0.3); /* Color de sombra oscuro y transparente */
-  filter: blur(25px); /* Desenfoque fuerte para suavizarla */
-  
-  /* ESTOS SON LOS CAMBIOS CLAVE: */
-  z-index: -1; /* Asegura que esté DETRÁS del libro */
-  /* La rotamos 90 grados para que quede plana en el "suelo" y la empujamos hacia abajo (Z negativo) */
-  transform: rotateX(90deg) translateZ(-30px); 
-  transform-origin: bottom center;
-  
-  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.5, 1); /* Misma transición suave que el libro */
-  opacity: 0;
-}
-
-/* Cuando el libro aparece (cerrado o abierto), mostramos la sombra */
-#book-scene:not(.hidden) .book.closed-front::before,
-#book-scene:not(.hidden) .book.open-reading::before,
-#book-scene:not(.hidden) .book.closed-back::before { 
-    opacity: 0.5; 
-}
-
-/* ESTADO HOVER: Cuando el libro flota al pasar el mouse */
-#book-scene:not(.hidden) .book.closed-front:hover::before {
-    /* La sombra se aleja más hacia abajo, se hace un poco más chica y más borrosa */
-    transform: rotateX(90deg) translateZ(-60px) scale(0.9);
-    filter: blur(30px);
-    opacity: 0.3;
-}
-/* -------------------------------- */
+/* --- SOMBRA ELIMINADA --- */
+/* Se eliminaron los bloques .book::before y sus hover states */
 
 #book-scene:not(.hidden) .book.closed-front,
 #book-scene:not(.hidden) .book.open-reading,
@@ -224,8 +190,7 @@ video::-webkit-media-controls {
 }
 
 #book-scene:not(.hidden) .book.closed-front:hover { 
-    /* El libro flota hacia arriba y se inclina un poco */
-    transform: translateY(-30px) rotateY(-25deg) rotateX(-10deg) scale(1.03);
+    transform: translateY(0) rotateY(-25deg) rotateX(-10deg) scale(1.03);
 }
 
 #book-scene:not(.hidden) .book.open-reading {
@@ -257,6 +222,7 @@ video::-webkit-media-controls {
   height: 100%;
   position: absolute;
   background-color: #fdfaf7;
+  /* Mantenemos esta sombra suave interna de las hojas para que no se vean planas */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   backface-visibility: hidden;
   cursor: pointer;
