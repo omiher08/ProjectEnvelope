@@ -170,7 +170,6 @@ video::-webkit-media-controls {
   perspective: 2000px;
   opacity: 0;
   transform: translateY(-120vh);
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 #book-scene:not(.hidden) .book {
@@ -196,6 +195,16 @@ video::-webkit-media-controls {
   opacity: 0.6;
 }
 
+.book::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  pointer-events: none;
+  z-index: 10;
+}
+ 
 #book-scene:not(.hidden) .book.closed-front,
 #book-scene:not(.hidden) .book.open-reading,
 #book-scene:not(.hidden) .book.closed-back {
@@ -247,8 +256,6 @@ video::-webkit-media-controls {
   box-shadow: none;
   backface-visibility: hidden;
   cursor: pointer;
-  border-radius: inherit;
-  overflow: hidden;
 }
 
 .front-content,
