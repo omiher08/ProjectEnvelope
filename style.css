@@ -177,22 +177,11 @@ video::-webkit-media-controls {
 }
 
 .book::before {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 10%;
-  width: 80%;
-  height: 20px;
-  background: none;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-  filter: blur(8px);
-  transform: rotateX(75deg);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  content: none;
 }
 
 .book.closed-front::before {
-  opacity: 0.4;
+  content: none;
 }
 
 #book-scene:not(.hidden) .book.closed-front,
