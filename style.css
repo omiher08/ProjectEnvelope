@@ -295,6 +295,44 @@ video::-webkit-media-controls {
   object-fit: cover;
 }
 
+/* Asegurar que el contenedor permita posicionar la sombra absoluta */
+.front-content,
+.back-content,
+#front-cover,
+#back-cover {
+  position: relative; /* necesario para que .cover-shadow se posicione dentro */
+}
+
+/* Estilo base de la sombra de la tapa */
+.cover-shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  filter: blur(12px);
+  pointer-events: none;    /* que no capture clicks */
+  z-index: 0;              /* estará por debajo del contenido visualmente si hace falta */
+  opacity: 0;              /* por defecto invisible, lo controlamos con clases/estados */
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  transform-origin: center;
+}
+
+/* Estados según la clase del libro */
+.book.closed-front #front-cover .cover-shadow {
+  opacity: 0.7;
+  transform: translateY(6px) scaleY(1.05);
+}
+
+.book.closed-back #back-cover .cover-shadow {
+  opacity: 0.7;
+  transform: translateY(6px) scaleY(1.05);
+}
+
+.book.open-reading .cover-shadow {
+  opacity: 0.45;
+  transform: translateY(3px) scaleY(1.02);
+}
+
 /* ==========================================================================
    ADAPTABILIDAD (RESPONSIVE DESIGN)
    ========================================================================== */
