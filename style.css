@@ -309,7 +309,7 @@ video::-webkit-media-controls {
   inset: 0;
   border-radius: 12px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-  filter: blur(12px);
+  filter: blur(6px);
   pointer-events: none;    /* que no capture clicks */
   z-index: 0;              /* estará por debajo del contenido visualmente si hace falta */
   opacity: 0;              /* por defecto invisible, lo controlamos con clases/estados */
