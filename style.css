@@ -303,18 +303,23 @@ video::-webkit-media-controls {
   position: relative; /* necesario para que .cover-shadow se posicione dentro */
 }
 
-/* Estilo base de la sombra de la tapa */
 .cover-shadow {
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  box-shadow: 0 12px 22px rgba(0,0,0,0.45);
-  filter: blur(6px);
-  pointer-events: none;    /* que no capture clicks */
-  z-index: 0;              /* estará por debajo del contenido visualmente si hace falta */
-  opacity: 0;              /* por defecto invisible, lo controlamos con clases/estados */
+  box-shadow: 0 15px 28px rgba(0,0,0,0.50);
+  filter: blur(4px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1; /* <-- clave */
   transition: opacity 0.45s ease, transform 0.45s ease;
-  transform-origin: center;
+}
+
+#front-cover,
+#back-cover {
+  position: relative;
+  background-color: #fdfaf7;
+  z-index: 1;
 }
 
 /* Estados según la clase del libro */
