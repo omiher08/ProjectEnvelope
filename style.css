@@ -311,15 +311,8 @@ video::-webkit-media-controls {
   filter: blur(4px);
   opacity: 0.9;
   pointer-events: none;
-  z-index: -1; /* <-- clave */
+  z-index: -1;
   transition: opacity 0.45s ease, transform 0.45s ease;
-}
-
-#front-cover,
-#back-cover {
-  position: relative;
-  background-color: #fdfaf7;
-  z-index: 1;
 }
 
 /* Estados según la clase del libro */
