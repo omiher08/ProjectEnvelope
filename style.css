@@ -380,6 +380,5 @@ video::-webkit-media-controls {
   .page-text p {
     font-size: 0.9em;
     line-height: 1.6;
-    overflow-y: auto;
   }
 }
