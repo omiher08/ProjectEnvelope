@@ -194,16 +194,6 @@ video::-webkit-media-controls {
 .book.closed-front::before {
   opacity: 0.6;
 }
-
-.book::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.25);
-  pointer-events: none;
-  z-index: 10;
-}
  
 #book-scene:not(.hidden) .book.closed-front,
 #book-scene:not(.hidden) .book.open-reading,
