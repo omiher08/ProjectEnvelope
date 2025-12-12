@@ -347,7 +347,7 @@ video::-webkit-media-controls {
 }
 
 @media (max-width: 767px) {
-  /* --- 1. AJUSTES DEL SOBRE (Igual que antes) --- */
+  /* --- 1. AJUSTES DEL SOBRE (Disclaimer) --- */
   #disclaimer-envelope.is-open {
     min-height: 550px;
   }
@@ -355,7 +355,7 @@ video::-webkit-media-controls {
     padding: 20px;
   }
   #letter-content {
-    padding: 50px 20px; /* Menos padding lateral para ganar espacio */
+    padding: 50px 20px;
     overflow-y: auto;
   }
   #accept-btn {
@@ -363,53 +363,53 @@ video::-webkit-media-controls {
     font-size: 0.9em;
   }
 
-  /* --- 2. SOLUCIÓN GEOMÉTRICA DEL LIBRO --- */
+  /* --- 2. SOLUCIÓN MATEMÁTICA DEL LIBRO --- */
   .book {
-    /* CLAVE: 44vw. 
-       Al abrirse será 88vw (44 + 44), dejando 6% de margen a cada lado.
-       Así NADA se saldrá de la pantalla. */
-    width: 44vw; 
+    /* ESTO ES LO IMPORTANTE: */
+    /* 42vw significa que cerrado ocupa menos de la mitad. */
+    /* Al abrirse, ocupará 84vw, quedando perfecto en el centro. */
+    width: 42vw; 
     
-    /* Compensamos lo angosto haciéndolo MUY ALTO */
-    height: 75vh; 
+    /* Lo hacemos alto para compensar que es angosto */
+    height: 65vh; 
     
     margin-top: 5vh; 
   }
 
-  /* --- 3. OPTIMIZACIÓN DE ESPACIO INTERNO --- */
-  /* Reducimos el relleno para que el texto no se vea aplastado */
+  /* --- 3. TEXTO Y MÁRGENES (Para que sea legible en columna angosta) --- */
   .front-content,
   .back-content {
-    padding: 20px 10px; /* Solo 10px a los lados es vital aquí */
+    /* Mínimo padding lateral para ganar espacio al texto */
+    padding: 20px 10px; 
   }
 
   .page-text {
-    display: block;
-    height: 85%;
-    overflow-y: auto; /* Scroll permitido */
+    display: block;      /* Necesario para el scroll */
+    height: 85%;         /* Altura fija del área de texto */
+    overflow-y: auto;    /* Scroll habilitado si el texto es largo */
     justify-content: flex-start;
   }
 
-  /* Texto un poco más pequeño para que quepan más palabras por línea */
   .page-text h2 {
-    font-size: 1.1em;
+    font-size: 1.1em; /* Título pequeño */
     margin-bottom: 10px;
   }
 
   .page-text p {
-    font-size: 0.85em; /* Aprox 13-14px, pequeño pero legible */
+    font-size: 0.8em;  /* Letra pequeña (aprox 13px) pero nítida */
     line-height: 1.4;
-    text-align: left; /* Alineado a la izquierda evita "ríos" en columnas angostas */
+    text-align: left;  /* Alineado a la izquierda */
   }
 
   .page-number {
     margin-top: 5px;
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
   
-  /* Ajuste de la portada para que la imagen no se deforme */
+  /* Evitar que la imagen de portada rompa el diseño */
   .cover-image {
     object-fit: contain; 
-    max-height: 50%; /* Evita que la imagen ocupe todo si es muy alta */
+    max-height: 40%; 
+    width: 80%;
   }
 }
