@@ -347,69 +347,39 @@ video::-webkit-media-controls {
 }
 
 @media (max-width: 767px) {
-  /* --- 1. AJUSTES DEL SOBRE (Disclaimer) --- */
   #disclaimer-envelope.is-open {
-    min-height: 550px;
+    min-height: 450px;
   }
   #envelope-front {
-    padding: 20px;
+    padding: 25px;
   }
   #letter-content {
-    padding: 50px 20px;
-    overflow-y: auto;
+    padding: 65px 35px;
+  }
+  .disclaimer-part h2 {
+    font-size: 1.2em;
+  }
+  .disclaimer-part p {
+    font-size: 0.9em;
   }
   #accept-btn {
     padding: 10px 20px;
     font-size: 0.9em;
   }
-
-  /* --- 2. SOLUCIÓN MATEMÁTICA DEL LIBRO --- */
   .book {
-    /* ESTO ES LO IMPORTANTE: */
-    /* 42vw significa que cerrado ocupa menos de la mitad. */
-    /* Al abrirse, ocupará 84vw, quedando perfecto en el centro. */
-    width: 42vw; 
-    
-    /* Lo hacemos alto para compensar que es angosto */
-    height: 65vh; 
-    
-    margin-top: 5vh; 
+    width: 48vw;
+    height: calc(48vw * 1.5);
   }
-
-  /* --- 3. TEXTO Y MÁRGENES (Para que sea legible en columna angosta) --- */
   .front-content,
   .back-content {
-    /* Mínimo padding lateral para ganar espacio al texto */
-    padding: 20px 10px; 
+    padding: 25px 20px;
   }
-
-  .page-text {
-    display: block;      /* Necesario para el scroll */
-    height: 85%;         /* Altura fija del área de texto */
-    overflow-y: auto;    /* Scroll habilitado si el texto es largo */
-    justify-content: flex-start;
-  }
-
   .page-text h2 {
-    font-size: 1.1em; /* Título pequeño */
-    margin-bottom: 10px;
+    font-size: 1.2em;
   }
-
   .page-text p {
-    font-size: 0.8em;  /* Letra pequeña (aprox 13px) pero nítida */
-    line-height: 1.4;
-    text-align: left;  /* Alineado a la izquierda */
-  }
-
-  .page-number {
-    margin-top: 5px;
-    font-size: 0.7em;
-  }
-  
-  /* Evitar que la imagen de portada rompa el diseño */
-  .cover-image {
-    object-fit: contain; 
-    max-height: 40%; 
-    width: 80%;
+    font-size: 0.9em;
+    line-height: 1.6;
+    overflow-y: auto;
   }
 }
