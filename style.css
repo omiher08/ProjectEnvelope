@@ -347,20 +347,15 @@ video::-webkit-media-controls {
 }
 
 @media (max-width: 767px) {
-  #disclaimer-envelope.is-open {
+ #disclaimer-envelope.is-open {
     min-height: 550px;
   }
   #envelope-front {
-    padding: 25px;
+    padding: 20px;
   }
   #letter-content {
-    padding: 65px 35px;
-  }
-  .disclaimer-part h2 {
-    font-size: 1.2em;
-  }
-  .disclaimer-part p {
-    font-size: 0.9em;
+    padding: 50px 20px;
+    overflow-y: auto;
   }
   #accept-btn {
     padding: 10px 20px;
