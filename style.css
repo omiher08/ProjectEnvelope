@@ -347,64 +347,69 @@ video::-webkit-media-controls {
 }
 
 @media (max-width: 767px) {
-  /* --- 1. ESTILOS DEL SOBRE (Conservando tus ajustes originales) --- */
+  /* --- 1. AJUSTES DEL SOBRE (Igual que antes) --- */
   #disclaimer-envelope.is-open {
-    min-height: 500px; /* Un poco más alto para que quepa la carta */
+    min-height: 550px;
   }
   #envelope-front {
-    padding: 25px;
+    padding: 20px;
   }
   #letter-content {
-    padding: 60px 30px;
-    overflow-y: auto; /* Scroll por si la carta es muy larga */
+    padding: 50px 20px; /* Menos padding lateral para ganar espacio */
+    overflow-y: auto;
   }
-  .disclaimer-part h2 {
-    font-size: 1.2em;
-  }
-  .disclaimer-part p {
-    font-size: 0.9em;
-  }
-  
-  /* Aquí está el botón que faltaba: */
   #accept-btn {
     padding: 10px 20px;
     font-size: 0.9em;
   }
 
-  /* --- 2. SOLUCIÓN DEL LIBRO (El arreglo nuevo) --- */
+  /* --- 2. SOLUCIÓN GEOMÉTRICA DEL LIBRO --- */
   .book {
-    /* Hacemos que ocupe casi toda la pantalla */
-    width: 90vw;
-    height: 80vh;
-    margin-top: 5vh; /* Un poco de aire arriba */
+    /* CLAVE: 44vw. 
+       Al abrirse será 88vw (44 + 44), dejando 6% de margen a cada lado.
+       Así NADA se saldrá de la pantalla. */
+    width: 44vw; 
+    
+    /* Compensamos lo angosto haciéndolo MUY ALTO */
+    height: 75vh; 
+    
+    margin-top: 5vh; 
   }
 
+  /* --- 3. OPTIMIZACIÓN DE ESPACIO INTERNO --- */
+  /* Reducimos el relleno para que el texto no se vea aplastado */
   .front-content,
   .back-content {
-    padding: 25px 20px; /* Márgenes internos cómodos */
+    padding: 20px 10px; /* Solo 10px a los lados es vital aquí */
   }
 
-  /* Ajuste crítico para el texto */
   .page-text {
-    display: block;      /* Importante para que el scroll funcione bien */
-    height: 85%;         /* Define una altura fija disponible */
-    overflow-y: auto;    /* HABILITA EL SCROLL si el texto es largo */
-    justify-content: flex-start; /* Alinea el texto arriba */
+    display: block;
+    height: 85%;
+    overflow-y: auto; /* Scroll permitido */
+    justify-content: flex-start;
   }
 
+  /* Texto un poco más pequeño para que quepan más palabras por línea */
   .page-text h2 {
-    font-size: 1.3em;
-    margin-bottom: 15px;
+    font-size: 1.1em;
+    margin-bottom: 10px;
   }
 
   .page-text p {
-    font-size: 1em;    /* Tamaño legible (aprox 16px) */
-    line-height: 1.5;  /* Buen espaciado */
-    text-align: left;  /* Alineado a la izquierda para leer mejor en móvil */
+    font-size: 0.85em; /* Aprox 13-14px, pequeño pero legible */
+    line-height: 1.4;
+    text-align: left; /* Alineado a la izquierda evita "ríos" en columnas angostas */
+  }
+
+  .page-number {
+    margin-top: 5px;
+    font-size: 0.8em;
   }
   
-  .page-number {
-    margin-top: 10px;
-    height: auto;
+  /* Ajuste de la portada para que la imagen no se deforme */
+  .cover-image {
+    object-fit: contain; 
+    max-height: 50%; /* Evita que la imagen ocupe todo si es muy alta */
   }
 }
