@@ -307,27 +307,28 @@ video::-webkit-media-controls {
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  box-shadow: 0 15px 28px rgba(0,0,0,0.50);
-  filter: blur(4px);
-  opacity: 0.9;
-  pointer-events: none;
-  z-index: -1;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  filter: blur(12px);
+  pointer-events: none;   
+  z-index: 0;             
+  opacity: 0;              
   transition: opacity 0.45s ease, transform 0.45s ease;
+  transform-origin: center;
 }
 
-/* Estados según la clase del libro */
+
 .book.closed-front #front-cover .cover-shadow {
-  opacity: 0.85;
+  opacity: 0.7;
   transform: translateY(6px) scaleY(1.05);
 }
 
 .book.closed-back #back-cover .cover-shadow {
-  opacity: 0.85;
+  opacity: 0.7;
   transform: translateY(6px) scaleY(1.05);
 }
 
 .book.open-reading .cover-shadow {
-  opacity: 0.80;
+  opacity: 0.45;
   transform: translateY(3px) scaleY(1.02);
 }
 
