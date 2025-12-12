@@ -348,7 +348,7 @@ video::-webkit-media-controls {
 
 @media (max-width: 767px) {
   #disclaimer-envelope.is-open {
-    min-height: 450px;
+    min-height: 550px;
   }
   #envelope-front {
     padding: 25px;
