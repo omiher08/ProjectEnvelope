@@ -308,7 +308,8 @@ video::-webkit-media-controls {
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.45);
+  filter: blur(6px);
   pointer-events: none;    /* que no capture clicks */
   z-index: 0;              /* estará por debajo del contenido visualmente si hace falta */
   opacity: 0;              /* por defecto invisible, lo controlamos con clases/estados */
@@ -318,17 +319,17 @@ video::-webkit-media-controls {
 
 /* Estados según la clase del libro */
 .book.closed-front #front-cover .cover-shadow {
-  opacity: 0.7;
+  opacity: 0.85;
   transform: translateY(6px) scaleY(1.05);
 }
 
 .book.closed-back #back-cover .cover-shadow {
-  opacity: 0.7;
+  opacity: 0.85;
   transform: translateY(6px) scaleY(1.05);
 }
 
 .book.open-reading .cover-shadow {
-  opacity: 0.45;
+  opacity: 0.85;
   transform: translateY(3px) scaleY(1.02);
 }
 
