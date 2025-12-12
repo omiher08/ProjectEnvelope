@@ -197,16 +197,12 @@ video::-webkit-media-controls {
 
 .book::after {
   content: "";
-  position: absolute;
+  position: relative;
   inset: 0;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0,0,0,0.25);
   pointer-events: none;
   z-index: 10;
-}
-
-.book.closed-back::after {
-  display: none;
 }
  
 #book-scene:not(.hidden) .book.closed-front,
