@@ -362,8 +362,8 @@ video::-webkit-media-controls {
     font-size: 0.9em;
   }
   .book {
-    width: 48vw;
-    height: calc(48vw * 3);
+    width: 49vw;
+    height: calc(49vw * 2);
   }
   .front-content,
   .back-content {
