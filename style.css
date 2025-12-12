@@ -363,7 +363,7 @@ video::-webkit-media-controls {
   }
   .book {
     width: 48vw;
-    height: calc(48vw * 1.5);
+    height: calc(48vw * 3);
   }
   .front-content,
   .back-content {
