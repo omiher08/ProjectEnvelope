@@ -347,14 +347,16 @@ video::-webkit-media-controls {
 }
 
 @media (max-width: 767px) {
+  /* --- 1. ESTILOS DEL SOBRE (Conservando tus ajustes originales) --- */
   #disclaimer-envelope.is-open {
-    min-height: 450px;
+    min-height: 500px; /* Un poco más alto para que quepa la carta */
   }
   #envelope-front {
     padding: 25px;
   }
   #letter-content {
-    padding: 65px 35px;
+    padding: 60px 30px;
+    overflow-y: auto; /* Scroll por si la carta es muy larga */
   }
   .disclaimer-part h2 {
     font-size: 1.2em;
@@ -362,23 +364,47 @@ video::-webkit-media-controls {
   .disclaimer-part p {
     font-size: 0.9em;
   }
+  
+  /* Aquí está el botón que faltaba: */
   #accept-btn {
     padding: 10px 20px;
     font-size: 0.9em;
   }
+
+  /* --- 2. SOLUCIÓN DEL LIBRO (El arreglo nuevo) --- */
   .book {
-    width: 48vw;
-    height: calc(48vw * 1.5);
+    /* Hacemos que ocupe casi toda la pantalla */
+    width: 90vw;
+    height: 80vh;
+    margin-top: 5vh; /* Un poco de aire arriba */
   }
+
   .front-content,
   .back-content {
-    padding: 25px 20px;
+    padding: 25px 20px; /* Márgenes internos cómodos */
   }
+
+  /* Ajuste crítico para el texto */
+  .page-text {
+    display: block;      /* Importante para que el scroll funcione bien */
+    height: 85%;         /* Define una altura fija disponible */
+    overflow-y: auto;    /* HABILITA EL SCROLL si el texto es largo */
+    justify-content: flex-start; /* Alinea el texto arriba */
+  }
+
   .page-text h2 {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    margin-bottom: 15px;
   }
+
   .page-text p {
-    font-size: 0.9em;
-    line-height: 1.6;
+    font-size: 1em;    /* Tamaño legible (aprox 16px) */
+    line-height: 1.5;  /* Buen espaciado */
+    text-align: left;  /* Alineado a la izquierda para leer mejor en móvil */
+  }
+  
+  .page-number {
+    margin-top: 10px;
+    height: auto;
   }
 }
